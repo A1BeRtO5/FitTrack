@@ -38,9 +38,6 @@ public class HelloController {
     static int oldPush;
     static int oldSqr;
 
-
-
-
     @FXML
     private TextField squattingTextField;
 
@@ -54,18 +51,20 @@ public class HelloController {
 
         System.out.println("a= " + a);
         System.out.println("b= " + b);
+
+        oldPush = c.selectPUSHfromDB();
+        oldSqr = c.selectSQRfromDB();
+
+        System.out.println("oldPus = " + oldPush);
+        System.out.println("oldSqr = " + oldSqr);
+
+        pushUpsTextField.setText("0");
+        squattingTextField.setText("0");
+
         c.changeDB(a, b);
 
         allPush.setText(c.selectPUSHfromDB() + " віджимань");
         allSQR.setText(c.selectSQRfromDB() + " присідань");
-
-        oldPush = Integer.parseInt(c.selectPUSHfromDB());
-        oldSqr = Integer.parseInt(c.selectSQRfromDB());
-        System.out.println("pldPus = " + oldPush);
-        System.out.println("oldSqr = " + oldSqr);
-        squattingTextField.setText("0");
-        pushUpsTextField.setText("0");
-
     }
 
     @FXML
@@ -78,10 +77,7 @@ public class HelloController {
         c.reloadDB();
         allPush.setText(  "0 віджимань");
         allSQR.setText(  "0 присідань");
-        oldPush = Integer.parseInt(c.selectPUSHfromDB());
-        oldSqr = Integer.parseInt(c.selectSQRfromDB());
-        System.out.println("pldPus = " + oldPush);
-        System.out.println("oldSqr = " + oldSqr);
+
     }
 
     @FXML
@@ -89,8 +85,8 @@ public class HelloController {
         allPush.setText(c.selectPUSHfromDB() + " віджимань");
         allSQR.setText(c.selectSQRfromDB() + " присідань");
 
-        oldPush = Integer.parseInt(c.selectPUSHfromDB());
-        oldSqr = Integer.parseInt(c.selectSQRfromDB());
+        oldPush = c.selectPUSHfromDB();
+        oldSqr = c.selectSQRfromDB();
 
         System.out.println("pldPus = " + oldPush);
         System.out.println("oldSqr = " + oldSqr);

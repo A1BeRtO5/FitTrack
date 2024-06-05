@@ -11,8 +11,8 @@ public class Connect {
     String user = "postgres";
     String password = "root";
 
-    public static String push;
-    static String sqr;
+    public static int push;
+    public static int sqr;
 
 
     public void changeDB(int pushWrite, int sqrWrite) {
@@ -24,22 +24,24 @@ public class Connect {
             int b = sqrWrite + oldSqr;
 
 
-            pstmt.setString(2, String.valueOf(b));
-            pstmt.setString(1, String.valueOf(a));
+            pstmt.setInt(2, b);
+            pstmt.setInt(1, a);
 
             pstmt.executeUpdate();
             System.out.println("Базу данних змінено");
+            System.out.println("записано a= " + a);
+            System.out.println("записано b= " + b);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public String selectPUSHfromDB() {
+    public int selectPUSHfromDB() {////////////////////////
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM  daylik");
             while (resultSet.next()) {
-                push = resultSet.getString("push");
+                push = resultSet.getInt("push");
             }
         } catch (SQLException e) {
             System.err.println("Помилка з'єднання з базою даних: " + e.getMessage());
@@ -47,12 +49,12 @@ public class Connect {
         return push;
     }
 
-    public String selectSQRfromDB() {
+    public int selectSQRfromDB() {//////////////////////////
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM  daylik");
             while (resultSet.next()) {
-                sqr = resultSet.getString("sqr");
+                sqr = resultSet.getInt("sqr");
             }
         } catch (SQLException e) {
             System.err.println("Помилка з'єднання з базою даних: " + e.getMessage());
@@ -60,38 +62,18 @@ public class Connect {
         return sqr;
     }
 
-    public void checkpointP() {
-        String sql = "UPDATE daylik SET push100 = ? WHERE id = 1";
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, "1");
-            pstmt.executeUpdate();
-            System.out.println("Базу данних змінено");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-    public void checkpointSQR() {
-        String sql = "UPDATE daylik SET sqr100 = ? WHERE id = 1";
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, "1");
-            pstmt.executeUpdate();
-            System.out.println("Базу данних змінено");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
     public void reloadDB() {
         String sql = "UPDATE daylik SET push = ?, sqr = ? WHERE id = 1";
         try (Connection conn = DriverManager.getConnection(url, user, password);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setString(2, String.valueOf(0));
-            pstmt.setString(1, String.valueOf(0));
+            pstmt.setInt(2, 0);
+            pstmt.setInt(1, 0);
 
             pstmt.executeUpdate();
             System.out.println("Базу данних змінено");
+            System.out.println("записано a= " + 0);
+            System.out.println("записано b= " + 0);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
