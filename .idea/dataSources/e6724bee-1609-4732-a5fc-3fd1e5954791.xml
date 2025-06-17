@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="daylik@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -4239,27 +4239,27 @@ false Zulu
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="265" parent="264" name="javaquizzer_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>16426</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>749</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="266" parent="264" name="orders_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>16417</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>748</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="267" parent="264" name="quizzer_id_seq">
-      <DasType>integer|0s</DasType>
       <ObjectId>24591</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>755</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="268" parent="264" name="daylik">
@@ -4287,41 +4287,41 @@ false Zulu
       <OwnerName>postgres</OwnerName>
     </table>
     <column id="272" parent="268" name="id">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>772</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="273" parent="268" name="push">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>772</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="274" parent="268" name="sqr">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
       <StateNumber>772</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="275" parent="269" name="id">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;javaquizzer_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>749</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>16426</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="276" parent="269" name="text">
-      <DasType>varchar|0s</DasType>
       <Position>2</Position>
       <StateNumber>749</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <index id="277" parent="269" name="javaquizzer_pkey">
@@ -4341,36 +4341,36 @@ false Zulu
       <UnderlyingIndexId>16433</UnderlyingIndexId>
     </key>
     <column id="279" parent="270" name="id">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;orders_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>748</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>16417</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="280" parent="270" name="sqr">
-      <DasType>varchar|0s</DasType>
       <Position>2</Position>
       <StateNumber>748</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="281" parent="270" name="push">
-      <DasType>varchar|0s</DasType>
       <Position>3</Position>
       <StateNumber>748</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="282" parent="270" name="sqr100">
-      <DasType>varchar|0s</DasType>
       <Position>4</Position>
       <StateNumber>748</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="283" parent="270" name="push100">
-      <DasType>varchar|0s</DasType>
       <Position>5</Position>
       <StateNumber>748</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <index id="284" parent="270" name="orders_pkey">
@@ -4390,18 +4390,18 @@ false Zulu
       <UnderlyingIndexId>16424</UnderlyingIndexId>
     </key>
     <column id="286" parent="271" name="id">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;quizzer_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>755</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <SequenceId>24591</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="287" parent="271" name="text">
-      <DasType>varchar|0s</DasType>
       <Position>2</Position>
       <StateNumber>755</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <index id="288" parent="271" name="quizzer_pkey">
